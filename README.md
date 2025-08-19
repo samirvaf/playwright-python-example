@@ -33,3 +33,13 @@ Subsequent runs will compare the current UI to the baseline:
 ```bash
 pytest
 ```
+
+## Run
+
+Execute the test suite:
+
+```bash
+pytest
+```
+
+Traces, screenshots, and videos are retained on failure by default.
