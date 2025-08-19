@@ -6,6 +6,15 @@ The included test opens the QBench login page at `https://srqaengineer-sf-uat.qb
 
 ## Setup
 
+Create and activate a virtual environment:
+
+```bash
+python -m venv .venv
+source .venv/bin/activate  # On Windows use .venv\Scripts\activate
+```
+
+Install the dependencies and Playwright browsers:
+
 ```bash
 pip install -r requirements.txt
 playwright install
