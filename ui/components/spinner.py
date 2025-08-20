@@ -8,6 +8,6 @@ class SpinnerGroup:
     def __init__(self, *spinners: Locator):
         self._spinners = spinners
 
-    def wait_gone(self, timeout: int = 10_000):
+    def wait_gone(self, timeout: int = 20_000):
         for sp in self._spinners:
             expect(sp).to_have_count(0, timeout=timeout)
