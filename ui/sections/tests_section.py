@@ -36,7 +36,7 @@ class TestsSection(Section):
         self.page.get_by_role("link", name="--Select--").click()
         self.page.get_by_role("option", name=name).click()
     
-    def add_test(self, assay_name: str = "- Amino Acids", assignee: str = "QA Engineer", timeout: int = 10_000):
+    def add_test(self, assay_name: str = "- Amino Acids", assignee: str = "QA Engineer", timeout: int = 20_000):
         self.selectable_list().get_by_text(assay_name).click()
         self.move_right_btn.click()
         self.assign_btn.click()

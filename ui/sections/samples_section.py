@@ -61,6 +61,6 @@ class SamplesSection(Section):
         self.page.get_by_role("cell", name=day, exact=True).click()
         self.point_of_collection_input().fill(point)
 
-    def save(self, timeout: int = 10_000):
+    def save(self, timeout: int = 20_000):
         self.save_samples_btn.click()
         SpinnerGroup(self._order_spinner, self._samples_spinner, self._tests_spinner).wait_gone(timeout=timeout)

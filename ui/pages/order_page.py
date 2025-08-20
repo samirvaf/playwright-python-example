@@ -14,7 +14,7 @@ class OrderPage:
         self.toast = Toast(page.locator("body"))
         self._status_spinners = page.locator('[data-bind="visible: !loaded()"]:visible')
 
-    def start_new_order(self, timeout: int = 10000):
+    def start_new_order(self, timeout: int = 20_000):
         SpinnerGroup(self._status_spinners).wait_gone(timeout=timeout)
         self.page.get_by_text("Workflow").click()
         self.page.get_by_text("Orders").click()

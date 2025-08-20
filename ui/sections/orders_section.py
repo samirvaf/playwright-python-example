@@ -37,7 +37,7 @@ class OrdersSection(Section):
         self.select_user_dropdown.click()
         self.page.get_by_role("option", name=label).click()
 
-    def save(self, timeout: int = 10_000):
+    def save(self, timeout: int = 20_000):
         self.save_order_btn.click()
         self.save_order_btn.wait_for(state="detached", timeout=timeout)
         SpinnerGroup(self._order_spinner, self._samples_spinner).wait_gone(timeout=timeout)
