@@ -26,7 +26,8 @@ playwright install
 ```
 
 Environment variables `BASE_URL`, `USER_EMAIL`, and `USER_PASSWORD` may be
-stored in a `.env` file or exported in the shell.
+stored in a `.env` file or exported in the shell. The continuous integration
+workflow expects these values to be provided through repository secrets.
 
 ## Running the tests
 
