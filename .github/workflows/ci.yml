@@ -14,19 +14,25 @@ jobs:
     strategy:
       matrix:
         browser: [chromium, webkit]
+
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v4
+
+      - uses: actions/setup-python@v5
         with:
           python-version: '3.x'
-      - name: Install dependencies
+
+      - uses: microsoft/playwright-github-action@v1
+
+      - name: Install Python deps
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-          playwright install ${{ matrix.browser }}
+
       - name: Run tests
         run: pytest --browser=${{ matrix.browser }} --output=test-results
-      - name: Upload artifacts
+
+      - name: Upload artifacts on failure
         if: failure()
         uses: actions/upload-artifact@v4
         with:
