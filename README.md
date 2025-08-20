@@ -58,3 +58,17 @@ Future improvements could include:
 - Writing a new test that proves a Lab ID cannot be reused by creating an
   order through the API and attempting to reuse the same Lab ID via the UI.
 
+## Highlights
+
+- **Secrets Usage:**
+  - Environment variables (`BASE_URL`, `USER_EMAIL`, `USER_PASSWORD`) are used for sensitive data and can be set in a `.env` file or exported in the shell. This keeps secrets out of the codebase and supports secure CI workflows.
+
+- **Spinner Handling:**
+  - UI tests include logic to detect and wait for spinners to disappear before interacting with page elements. This ensures reliable automation by synchronizing actions with the application's loading state.
+
+- **Composition over Inheritance:**
+  - Page objects are built using composition, not inheritance. Pages are assembled from smaller section and component objects, promoting code reuse and flexibility. This design avoids deep inheritance chains and makes the codebase easier to extend and maintain.
+
+## AI Usage
+
+Used a combination of ChatGPT, Codex and Github Copilot.
