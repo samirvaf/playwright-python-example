@@ -6,9 +6,9 @@ class SamplesSection(Section):
     def __init__(self, page: Page):
         root = page.locator("#qbenchOrderSamplesRowView")
         super().__init__(page, root)
-        self._order_spinner   = page.locator("#qbenchOrderSpinnerDiv")
-        self._samples_spinner = page.locator("#qbenchOrderSamplesSpinnerDiv")
-        self._tests_spinner   = page.locator("#qbenchOrderTestsSpinnerDiv")
+        self._order_spinner   = page.locator("#qbenchOrderSpinnerDiv:visible")
+        self._samples_spinner = page.locator("#qbenchOrderSamplesSpinnerDiv:visible")
+        self._tests_spinner   = page.locator("#qbenchOrderTestsSpinnerDiv:visible")
 
     # --- Locators ---
     @property

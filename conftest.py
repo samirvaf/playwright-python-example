@@ -1,9 +1,6 @@
 import os
 import pytest
-from pathlib import Path
-from typing import List
 from dotenv import load_dotenv
-from playwright.sync_api import Page, Locator, expect
 
 load_dotenv()
 

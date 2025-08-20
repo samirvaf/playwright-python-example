@@ -7,7 +7,7 @@ class OrdersSection(Section):
         root = page.locator("[role='tabpanel']#details")
         super().__init__(page, root)
 
-        self._order_spinner  = page.locator("#qbenchOrderSpinnerDiv")
+        self._order_spinner  = page.locator("#qbenchOrderSpinnerDiv:visible")
         self._samples_spinner = page.locator("#qbenchOrderSamplesSpinnerDiv")
 
     # --- Locators ---
