@@ -69,6 +69,12 @@ Future improvements could include:
 - **Composition over Inheritance:**
   - Page objects are built using composition, not inheritance. Pages are assembled from smaller section and component objects, promoting code reuse and flexibility. This design avoids deep inheritance chains and makes the codebase easier to extend and maintain.
 
+- **Test failures report:**
+  - Test failures are uploaded to Github Actions artifacts including screenshots, logs and videos.
+
 ## AI Usage
 
 Used a combination of ChatGPT, Codex and Github Copilot.
+- ChatGPT for simple tasks and doubts about playwright API.
+- Codex to build most of the boilerplate code.
+- Github Copilot to speed up code writing.
