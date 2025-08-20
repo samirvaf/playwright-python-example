@@ -11,7 +11,7 @@ jobs:
       matrix:
         browser: [chromium, webkit]
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: actions/setup-python@v4
         with:
           python-version: '3.x'
@@ -24,7 +24,7 @@ jobs:
         run: pytest --browser=${{ matrix.browser }} --output=test-results
       - name: Upload artifacts
         if: failure()
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: playwright-${{ matrix.browser }}
           path: test-results
