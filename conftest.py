@@ -18,20 +18,7 @@ def creds():
         "password": os.environ["USER_PASSWORD"],
     }
 
-def mask_common(page: Page) -> List[Locator]:
-    return [
-        page.get_by_text("Created at", exact=False),
-        page.get_by_text("Updated at", exact=False),
-        page.get_by_text("Order #", exact=False),
-        page.locator("img[alt*=avatar]"),
-    ]
-
-@pytest.fixture
-def snapshot(page: Page):
-    def take(name: str, masks: List[Locator] = None):
-        expect(page).to_have_screenshot(
-            name=name,
-            mask=masks or [],
-            max_diff_pixels=0,
-        )
-    return take
+@pytest.fixture(autouse=True)
+def stable_viewport(page):
+    page.set_viewport_size({"width": 1280, "height": 900})
+    page.emulate_media(color_scheme="light")
